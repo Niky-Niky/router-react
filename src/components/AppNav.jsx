@@ -6,7 +6,7 @@ export const Navigation = () => {
          <nav>
              <ul>
                  <li><NavLink to = '/'>Home</NavLink></li>
-                 <li><NavLink to = '/books'>Books</NavLink></li>
+                 <li><NavLink className = {({isPending}) => isPending ? 'loader' : null}to = '/books'>Books</NavLink></li>
              </ul>
          </nav>
          )
