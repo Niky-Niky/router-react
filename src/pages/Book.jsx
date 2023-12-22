@@ -3,7 +3,7 @@ import { Link, Outlet, useLoaderData, useParams } from "react-router-dom"
 export function Book() {
 
 const {bookId} = useParams();
-const {image, title, author, description, rating} = useLoaderData();
+const {image, title, author, aboutAuthor, description, rating} = useLoaderData();
 
     return (
     <div className="thumb">
@@ -13,7 +13,7 @@ const {image, title, author, description, rating} = useLoaderData();
         <p>{description}</p>
         <p>{rating}</p>
         <Link to={`/books/${bookId}/author`}>About author</Link>
-        <Outlet/>
+        <Outlet context={aboutAuthor}/>
     </div>
     )
 }
